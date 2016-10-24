@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TryMapView</string>
+    <string name="google_maps_key" translatable="false" templateMergeStrategy="preserve">AIzaSyAgjBVIs9KoP4vex0htKJshmeeCGkTReCw
+    </string>
+</resources>
