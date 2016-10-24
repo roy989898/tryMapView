@@ -6,7 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
@@ -30,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
         mMapView = (MapView) findViewById(R.id.map);
         mMapView.onCreate(mapViewBundle);
+
 
         mMapView.getMapAsync(this);
     }
@@ -67,7 +70,12 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     @Override
     public void onMapReady(GoogleMap map) {
-        map.addMarker(new MarkerOptions().position(new LatLng(0, 0)).title("Marker"));
+//        add pin
+        Marker marker = map.addMarker(new MarkerOptions().position(new LatLng(0, 0)).title("Marker"));
+//        set the icon
+        marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.common_full_open_on_phone));
+
+
     }
 
     @Override
