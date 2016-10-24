@@ -2,6 +2,7 @@ package pom.trymapview;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
@@ -11,7 +12,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
+public class MainActivity extends AppCompatActivity implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
 
 
     private MapView mMapView;
@@ -74,6 +75,9 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         Marker marker = map.addMarker(new MarkerOptions().position(new LatLng(0, 0)).title("Marker"));
 //        set the icon
         marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.common_full_open_on_phone));
+//
+//        click
+        map.setOnMarkerClickListener(this);
 
 
     }
@@ -96,5 +100,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         mMapView.onLowMemory();
     }
 
+    @Override
+    public boolean onMarkerClick(Marker marker) {
+        Toast.makeText(this,"Click",Toast.LENGTH_SHORT).show();
+        return true;
+    }
 }
 
