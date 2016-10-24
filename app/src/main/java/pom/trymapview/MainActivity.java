@@ -1,5 +1,6 @@
 package pom.trymapview;
 
+import android.location.Location;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
@@ -49,6 +50,16 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
 
         mMapView.onSaveInstanceState(mapViewBundle);
+
+
+//        get the distance
+      /*  Location locationA = new Location("point A");
+        locationA.setLatitude(latA);
+        locationA.setLongitude(lngA);
+        Location locationB = new Location("point B");
+        locationB.setLatitude(latB);
+        LocationB.setLongitude(lngB);
+        distance = locationA.distanceTo(locationB) ;*/
     }
 
     @Override
