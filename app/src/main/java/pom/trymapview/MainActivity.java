@@ -6,6 +6,9 @@ import android.location.Location;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.GoogleMap;
@@ -103,6 +106,12 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             return;
         }
         map.setMyLocationEnabled(true);
+
+
+//        SET the my location button drawable
+        ImageView locationButton = (ImageView)((View) mMapView.findViewById(1).getParent()).findViewById(2);
+        locationButton.setImageDrawable(getResources().getDrawable(R.mipmap.ic_launcher));
+
 
 
     }
